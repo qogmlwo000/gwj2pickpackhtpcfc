@@ -1134,10 +1134,10 @@
             const pickData = data.filter(d => d.processType.includes('PICK')).sort((a, b) => parseFloat(b.htp) - parseFloat(a.htp));
             const packData = data.filter(d => d.processType.includes('PACK')).sort((a, b) => parseFloat(b.htp) - parseFloat(a.htp));
             
-            const topPickSet = new Set(pickData.slice(0, 10).map(d => d.employee));
-            const topPackSet = new Set(packData.slice(0, 10).map(d => d.employee));
-            const lowPickSet = new Set(pickData.slice(-10).map(d => d.employee));
-            const lowPackSet = new Set(packData.slice(-10).map(d => d.employee));
+            const topPickSet = new Set(pickData.slice(0, 3).map(d => d.employee));
+            const topPackSet = new Set(packData.slice(0, 3).map(d => d.employee));
+            const lowPickSet = new Set(pickData.slice(-3).map(d => d.employee));
+            const lowPackSet = new Set(packData.slice(-3).map(d => d.employee));
 
             data.forEach(item => {
                 const row = document.createElement('tr');
